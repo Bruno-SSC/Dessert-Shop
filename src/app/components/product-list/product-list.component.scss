@@ -1,0 +1,5 @@
+@import "mixins";
+
+.product_title {
+  @include red_hat(500);
+}
