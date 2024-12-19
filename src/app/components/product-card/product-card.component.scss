@@ -1,0 +1,69 @@
+.dessert_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.dessert_img {
+  width: 100%;
+  height: 70%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.dessert_img__img_content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.add_btn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+
+  display: flex;
+  justify-content: space-around;
+  gap: 5px;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 30px;
+
+  border: 1px solid #938686;
+}
+
+.add_btn__label {
+  font-weight: 600;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.dessert_info {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.dessert_info__type {
+  font-weight: 400;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.dessert_info__name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dessert_info__price {
+  color: #c06a4a;
+  font-size: 0.9rem;
+}

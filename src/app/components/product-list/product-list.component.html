@@ -1,1 +1,27 @@
-<h1 class="product_title">Desserts</h1>
+<section class="desserts_layout">
+  <div class="dessert_list">
+    <h1 class="dessert_list__title">Desserts</h1>
+
+    <div class="dessert_list__items">
+      
+      <app-product-card
+        *ngFor="let product of products"
+        [product]="product"
+      ></app-product-card>
+      
+    </div>
+  </div>
+
+  <div class="dessert_cart">
+    <h1 class="dessert_cart__title">Your Cart (0)</h1>
+
+    <div class="dessert_cart__illustration_container">
+      <img
+        src="/assets/images/illustration-empty-cart.svg"
+        alt="cake_illustration"
+      />
+    </div>
+
+    <span class="dessert_cart__message">Your added items will appear here</span>
+  </div>
+</section>

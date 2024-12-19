@@ -2,6 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
+/* 
+up to 375 is mobile
+up to 8 or 9 smtg is tablet
+up to 1440 is desktop
+above it, I will just rig the width and fill with black borders or something
+like mercado livre and such, no widescreen support
+*/
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +18,22 @@
   text-decoration: none;
 }
 
+html {
+  background-color: #000;
+}
+
 body {
-  width: 100vw;
+  margin: auto;
+  background-color: #fcf8f5;
+
+  width: 1440px;
   min-height: 100vh;
-  font-size: 16px;
+  padding: 100px;
+
+  font-family: "Red Hat Text", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 16px; // this i'm using rem everywhere, changing only this will update everywhere. Easy Responsiveness.
+
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

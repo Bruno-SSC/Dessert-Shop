@@ -1,5 +1,40 @@
-@import "mixins";
+.desserts_layout {
+  display: flex;
+  gap: 30px;
+}
 
-.product_title {
-  @include red_hat(500);
+.dessert_list__title {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+.dessert_list__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: calc(400px * 2); // enough to 3 items. 400 is card size + gap.
+}
+
+.dessert_cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 380px;
+  height: 300px;
+  border-radius: 15px;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+.dessert_cart__title {
+  align-self: flex-start;
+  padding-bottom: 15px;
+  color: #cb3800;
+  font-weight: 700;
+}
+.dessert_cart__message {
+  font-weight: 400;
+  opacity: 0.7;
 }
