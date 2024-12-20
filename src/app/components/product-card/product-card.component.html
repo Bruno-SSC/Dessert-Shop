@@ -2,17 +2,22 @@
   <div class="dessert_img">
     <div class="dessert_img__img_container">
       <img
-        [ngStyle]="{
-          border: selected ? '2px solid #ca390b' : '2px solid transparent'
+        [ngClass]="{
+          dessert_img__img_content: true,
+          'dessert_img__img_content--selected': selected
         }"
-        class="dessert_img__img_content"
         [src]="product.image.desktop"
         alt="dessert_pic"
       />
     </div>
   </div>
 
-  <div (click)="add_dessert()" class="add_btn" *ngIf="!selected">
+  <div
+    [@slow_show]="!selected && 'appear'"
+    (click)="add_dessert()"
+    class="add_btn"
+    *ngIf="!selected"
+  >
     <div class="add_btn__icon_container">
       <img
         class="add_btn__icon_content"
@@ -24,7 +29,11 @@
     <span class="add_btn__label">Add to Cart</span>
   </div>
 
-  <div class="add_btn add_btn--selected" *ngIf="selected">
+  <div
+    [@slow_show]="selected && 'appear'"
+    class="add_btn add_btn--selected"
+    *ngIf="selected"
+  >
     <div class="add_btn__icon_container" (click)="decrese_quantity()">
       <svg
         class="add_btn__icon_content add_btn__icon_content--decrement"

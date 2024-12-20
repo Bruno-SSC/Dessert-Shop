@@ -17,6 +17,12 @@
   object-fit: cover;
   border-radius: 15px;
   overflow: hidden;
+  border: 2px solid transparent; // avoid image shrinking effect due to box-sizing
+  transition: 1s ease all;
+
+  &--selected {
+    border: 2px solid #c83b0e;
+  }
 }
 
 .add_btn {
@@ -24,7 +30,7 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -70%);
-
+  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,6 +80,7 @@
   .add_btn__icon_container {
     width: 10px;
     height: 10px;
+    transition: all ease 300ms;
   }
 }
 
