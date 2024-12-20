@@ -2,6 +2,9 @@
   <div class="dessert_img">
     <div class="dessert_img__img_container">
       <img
+        [ngStyle]="{
+          border: selected ? '2px solid #ca390b' : '2px solid transparent'
+        }"
         class="dessert_img__img_content"
         [src]="product.image.desktop"
         alt="dessert_pic"
@@ -9,7 +12,7 @@
     </div>
   </div>
 
-  <div class="add_btn">
+  <div (click)="add_dessert()" class="add_btn" *ngIf="!selected">
     <div class="add_btn__icon_container">
       <img
         class="add_btn__icon_content"
@@ -18,12 +21,49 @@
       />
     </div>
 
-    <h1 class="add_btn__label">Add to Cart</h1>
+    <span class="add_btn__label">Add to Cart</span>
+  </div>
+
+  <div class="add_btn add_btn--selected" *ngIf="selected">
+    <div class="add_btn__icon_container" (click)="decrese_quantity()">
+      <svg
+        class="add_btn__icon_content add_btn__icon_content--decrement"
+        alt="decrement_icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="2"
+        fill="none"
+        viewBox="0 0 10 2"
+      >
+        <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+      </svg>
+    </div>
+
+    <span class="add_btn__label">{{ quantity }}</span>
+
+    <div class="add_btn__icon_container" (click)="increase_quantity()">
+      <svg
+        class="add_btn__icon_content add_btn__icon_content--increment"
+        alt="increment_icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="10"
+        fill="none"
+        viewBox="0 0 10 10"
+      >
+        <path
+          fill="#fff"
+          d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"
+        />
+      </svg>
+    </div>
   </div>
 
   <div class="dessert_info">
     <h4 class="dessert_info__type">{{ product.category }}</h4>
     <h2 class="dessert_info__name">{{ product.name }}</h2>
-    <h3 class="dessert_info__price">&#x24;{{ product.price | number: "1.2" }}</h3>
+    <h3 class="dessert_info__price">
+      &#x24;{{ product.price | number : "1.2" }}
+    </h3>
   </div>
 </section>
