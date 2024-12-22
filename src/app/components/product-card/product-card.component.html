@@ -4,7 +4,7 @@
       <img
         [ngClass]="{
           dessert_img__img_content: true,
-          'dessert_img__img_content--selected': selected
+          'dessert_img__img_content--selected': product.selected
         }"
         [src]="product.image.desktop"
         alt="dessert_pic"
@@ -13,10 +13,15 @@
   </div>
 
   <div
-    [@slow_show]="!selected && 'appear'"
-    (click)="add_dessert()"
+    [@slow_show]="!product.selected && 'appear'"
+    (click)="
+      this.update_product.emit({
+        product_name: product.name,
+        update_type: 'add_dessert'
+      })
+    "
     class="add_btn"
-    *ngIf="!selected"
+    *ngIf="!product.selected"
   >
     <div class="add_btn__icon_container">
       <img
@@ -30,11 +35,19 @@
   </div>
 
   <div
-    [@slow_show]="selected && 'appear'"
+    [@slow_show]="product.selected && 'appear'"
     class="add_btn add_btn--selected"
-    *ngIf="selected"
+    *ngIf="product.selected"
   >
-    <div class="add_btn__icon_container" (click)="decrese_quantity()">
+    <div
+      class="add_btn__icon_container"
+      (click)="
+        this.update_product.emit({
+          product_name: product.name,
+          update_type: 'decrease_quantity'
+        })
+      "
+    >
       <svg
         class="add_btn__icon_content add_btn__icon_content--decrement"
         alt="decrement_icon"
@@ -50,7 +63,15 @@
 
     <span class="add_btn__label">{{ this.product.quantity }}</span>
 
-    <div class="add_btn__icon_container" (click)="increase_quantity()">
+    <div
+      class="add_btn__icon_container"
+      (click)="
+        this.update_product.emit({
+          product_name: product.name,
+          update_type: 'increase_quantity'
+        })
+      "
+    >
       <svg
         class="add_btn__icon_content add_btn__icon_content--increment"
         alt="increment_icon"

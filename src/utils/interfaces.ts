@@ -9,4 +9,10 @@ export interface product_item {
   category: string;
   price: number;
   quantity: number;
+  selected?: boolean;
+}
+
+export interface output_event {
+  product_name: string;
+  update_type: string;
 }

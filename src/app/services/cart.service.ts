@@ -15,15 +15,20 @@ export class CartService {
       (el) => el.name == dessert.name
     )[0];
 
-    console.log(filtered_item);
-
     if (filtered_item) filtered_item = dessert;
     else this.selected_desserts.push(dessert);
 
     EventManager.emit('cart_update', this.selected_desserts);
   }
 
-  remove_dessert(dessert_name: string) {
+  remove_dessert(dessert_name: string): void | string {
+    const index = this.selected_desserts.findIndex(
+      (el) => el.name === dessert_name
+    );
+
+    if (index === -1) return 'dessert not found!';
+    else this.selected_desserts.splice(index, 1);
+
     EventManager.emit('cart_update', this.selected_desserts);
   }
 

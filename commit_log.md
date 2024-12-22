@@ -9,3 +9,6 @@ com3
     Also added a simple opacity animation to the button transformation from "add to cart" to the version with increment/decrement.
 com4
     Finished the cart component, working on the cart service and their comunication. Added an EventManager as replacement for angular rxjs for now. 
+com5
+    Working on moving all cart_service communication from children components to the product list component in order to simplify communication and avoid mess.
+    the cart and card emits custom events to the list. Then, the list proceeds with the cart_service. 

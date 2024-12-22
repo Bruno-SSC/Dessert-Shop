@@ -34,7 +34,10 @@
       </span>
     </div>
 
-    <div class="list_item__icon_container">
+    <div
+      class="list_item__icon_container"
+      (click)="remove_dessert.emit(product)"
+    >
       <svg
         class="list_item__icon_content"
         alt="remove item icon"
@@ -54,7 +57,9 @@
 
   <div class="order_total">
     <span class="order_total__message">Order Total</span>
-    <h1 class="order_total__checkout_price">&#x24;{{ total_price | number : "1.2" }}</h1>
+    <h1 class="order_total__checkout_price">
+      &#x24;{{ total_price | number : "1.2" }}
+    </h1>
   </div>
 
   <div class="carbon_neutral">

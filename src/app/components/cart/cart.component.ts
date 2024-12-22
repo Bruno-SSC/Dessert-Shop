@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { EventManager } from 'src/utils/EventManager';
 import { product_item } from 'src/utils/interfaces';
@@ -11,6 +11,7 @@ import { product_item } from 'src/utils/interfaces';
 export class CartComponent {
   selected_products: product_item[] = [];
   total_price = 0;
+  @Output() remove_dessert = new EventEmitter<product_item>();
 
   constructor(private cart_client: CartService) {
     this.cart_client = cart_client;

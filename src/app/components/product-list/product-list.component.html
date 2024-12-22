@@ -4,11 +4,12 @@
 
     <div class="dessert_list__items">
       <app-product-card
+        (update_product)="update_product($event)"
         *ngFor="let product of products"
         [product]="product"
       ></app-product-card>
     </div>
   </div>
 
-  <app-cart></app-cart>
+  <app-cart (remove_dessert)="remove_dessert($event)"></app-cart>
 </section>
