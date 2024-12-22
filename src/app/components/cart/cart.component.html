@@ -1,0 +1,75 @@
+<div
+  class="dessert_cart dessert_cart--empty"
+  *ngIf="selected_products.length === 0"
+>
+  <h1 class="dessert_cart__title">
+    Your Cart ({{ selected_products.length }})
+  </h1>
+  <div class="dessert_cart__illustration_container">
+    <img
+      src="/assets/images/illustration-empty-cart.svg"
+      alt="cake_illustration"
+    />
+  </div>
+
+  <span class="dessert_cart__message"> Your added items will appear here </span>
+</div>
+
+<div class="dessert_cart" *ngIf="selected_products.length > 0">
+  <h1 class="dessert_cart__title">
+    Your Cart ({{ selected_products.length }})
+  </h1>
+
+  <div class="list_item" *ngFor="let product of selected_products">
+    <div class="list_item__info">
+      <p class="list_item__name">{{ product.name }}</p>
+      <span class="list_item__quantity"> {{ product.quantity }}x </span>
+
+      <span class="list_item__price">
+        &#64;{{ product.price | number : "1.2" }}
+      </span>
+
+      <span class="list_item__total_price">
+        &#x24;{{ product.price * product.quantity | number : "1.2" }}
+      </span>
+    </div>
+
+    <div class="list_item__icon_container">
+      <svg
+        class="list_item__icon_content"
+        alt="remove item icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="10"
+        height="10"
+        fill="none"
+        viewBox="0 0 10 10"
+      >
+        <path
+          fill="#CAAFA7"
+          d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+        />
+      </svg>
+    </div>
+  </div>
+
+  <div class="order_total">
+    <span class="order_total__message">Order Total</span>
+    <h1 class="order_total__checkout_price">&#x24;{{ total_price | number : "1.2" }}</h1>
+  </div>
+
+  <div class="carbon_neutral">
+    <div class="carbon_neutral__icon_container">
+      <img
+        class="carbon_neutral__icon_content"
+        src="./assets/images/icon-carbon-neutral.svg"
+        alt="carbon neutral icon"
+      />
+    </div>
+
+    <span class="carbon_neutral__disclaimer">
+      This is a <b>carbon-neutral</b> delivery
+    </span>
+  </div>
+
+  <div class="confirm_order_btn">Confirm Order</div>
+</div>

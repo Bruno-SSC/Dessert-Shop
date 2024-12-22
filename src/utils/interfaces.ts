@@ -8,4 +8,5 @@ export interface product_item {
   name: string;
   category: string;
   price: number;
+  quantity: number;
 }

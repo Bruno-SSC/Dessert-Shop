@@ -7,3 +7,5 @@ com2
 com3
     improved the transformation for the border in selected desserts by using ngClass instead of ngStyle and adding a transition.
     Also added a simple opacity animation to the button transformation from "add to cart" to the version with increment/decrement.
+com4
+    Finished the cart component, working on the cart service and their comunication. Added an EventManager as replacement for angular rxjs for now. 

@@ -8,6 +8,7 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -24,20 +25,24 @@ import {
 })
 export class ProductCardComponent {
   selected: boolean = false;
-  quantity: number = 0;
   @Input() product: product_item = {} as product_item;
+
+  constructor(private cart_client: CartService) {}
 
   add_dessert(): void {
     this.selected = true;
-    this.quantity = 1;
-  }
-
-  decrese_quantity(): void {
-    if (this.quantity > 1) this.quantity -= 1;
-    else this.selected = false;
+    this.product.quantity = 1;
+    this.cart_client.update_dessert(this.product);
   }
 
   increase_quantity(): void {
-    this.quantity += 1;
+    this.product.quantity += 1;
+    this.cart_client.update_dessert(this.product);
+  }
+
+  decrese_quantity(): void {
+    if (this.product.quantity > 1) this.product.quantity -= 1;
+    else this.selected = false;
+    this.cart_client.remove_dessert(this.product.name);
   }
 }
