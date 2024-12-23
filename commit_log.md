@@ -18,5 +18,5 @@ com7
    added _redirects to redirect requests in netlify.
 com8
     Working on the mobile version. Implemented the product list for devices up to 390px.
-com9
-    
+com9    
+    fixed the images to be responsive for screens smaller the 390px and ajusted the cart component as well. 

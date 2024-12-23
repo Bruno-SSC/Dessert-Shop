@@ -8,13 +8,14 @@
 
 .dessert_img__container {
   width: 100%;
-  height: 70%;
+  height: calc(70% - 5px);
+  // to align middle of the add_cart btn with the bottom border
   overflow: hidden;
 }
 
 .dessert_img__content {
   width: 100%;
-  height: fit-content;
+  height: 100%;
   object-fit: cover;
 
   border-radius: 15px;
@@ -30,6 +31,7 @@
 @media screen and (min-width: 400px) {
   .dessert_container {
     width: 250px;
+    height: 350px;
   }
 }
 
