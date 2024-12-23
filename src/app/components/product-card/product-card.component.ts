@@ -23,6 +23,7 @@ import {
   ],
 })
 export class ProductCardComponent {
+  window_width = window.innerWidth;
   @Input() product: product_item = {} as product_item;
   @Output() update_product = new EventEmitter<output_event>();
 }

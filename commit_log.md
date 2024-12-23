@@ -16,4 +16,7 @@ com6
     Implemented the confirmatation modal.
 com7
    added _redirects to redirect requests in netlify.
-   
+com8
+    Working on the mobile version. Implemented the product list for devices up to 390px.
+com9
+    

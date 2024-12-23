@@ -26,9 +26,9 @@ body {
   margin: auto;
   background-color: #fcf8f5;
 
-  width: 1440px;
+  width: 100vw;
   min-height: 100vh;
-  padding: 100px;
+  padding: 10px;
 
   font-family: "Red Hat Text", sans-serif;
   font-optical-sizing: auto;
@@ -37,4 +37,10 @@ body {
   overflow-y: scroll;
   overflow-x: hidden;
   position: relative;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    padding: 100px;
+  }
 }

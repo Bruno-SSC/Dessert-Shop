@@ -1,15 +1,13 @@
 <section class="dessert_container">
-  <div class="dessert_img">
-    <div class="dessert_img__img_container">
-      <img
-        [ngClass]="{
-          dessert_img__img_content: true,
-          'dessert_img__img_content--selected': product.selected
-        }"
-        [src]="product.image.desktop"
-        alt="dessert_pic"
-      />
-    </div>
+  <div class="dessert_img__container">
+    <img
+      [ngClass]="{
+        dessert_img__content: true,
+        'dessert_img__content--selected': product.selected
+      }"
+      [src]="window_width <= 390 ? product.image.mobile : product.image.desktop"
+      alt="dessert_pic"
+    />
   </div>
 
   <div

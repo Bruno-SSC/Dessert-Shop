@@ -1,5 +1,6 @@
 .desserts_layout {
   display: flex;
+  flex-direction: column;
   gap: 30px;
 }
 
@@ -11,8 +12,19 @@
 
 .dessert_list__items {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   gap: 20px;
-  width: calc(400px * 2); // enough to 3 items. 400 is card size + gap.
 }
 
+@media screen and (min-width: 1000px) {
+  .desserts_layout {
+    flex-direction: row;
+  }
+
+  .dessert_list__items {
+    flex-direction: row;
+    width: calc(400px * 2); // enough to 3 items. 400 is card size + gap.
+    flex-wrap: wrap;
+  }
+}
