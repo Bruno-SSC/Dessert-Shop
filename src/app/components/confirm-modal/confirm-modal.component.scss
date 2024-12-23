@@ -1,0 +1,136 @@
+.black_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+.confirm_order {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 600px;
+  height: fit-content;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal_message {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal_message__icon_container {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
+
+.modal_message__icon_content {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.modal_message__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.modal_message__message {
+  opacity: 0.6;
+}
+
+.checkout_items {
+  border-radius: 10px;
+  background-color: #fcf8f5;
+  width: 100%;
+  height: fit-content;
+}
+
+.requested_item {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.requested_item__image_container {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.requested_item__image_content {
+  width: 100%;
+  height: 100%;
+}
+
+.requested_item__name {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.requested_item__amount,
+.requested_item__item_price,
+.requested_item__amount_price {
+  font-size: 0.8rem;
+  margin-right: 10px;
+}
+
+.requested_item__amount {
+  color: #bb6244;
+  font-weight: 600;
+}
+
+.requested_item__item_price {
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.requested_item__amount_price {
+  margin-left: auto;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.order_total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+
+.order_total__title {
+  font-size: 0.9rem;
+}
+
+.order_total__checkout_price {
+  font-size: 1.2rem;
+}
+
+.new_order_btn {
+  width: 100%;
+  padding: 20px;
+  background-color: #c83b0e;
+  border-radius: 30px;
+  display: grid;
+  place-items: center;
+  color: #ffffe9;
+  cursor: pointer;
+}

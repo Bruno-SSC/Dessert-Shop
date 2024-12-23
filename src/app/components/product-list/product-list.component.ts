@@ -10,6 +10,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductListComponent {
   products: product_item[];
+  confirmed_order: boolean = false;
 
   constructor(
     private api_client: ApiService,

@@ -1,0 +1,49 @@
+<section class="black_layer"></section>
+
+<section class="confirm_order">
+  <div class="modal_message">
+    <div class="modal_message__icon_container">
+      <img
+        class="modal_message__icon_content"
+        src="./assets/images/icon-order-confirmed.svg"
+        alt="icon order confirmed"
+      />
+    </div>
+
+    <h1 class="modal_message__title">Order Confirmed</h1>
+    <p class="modal_message__message">We hope you enjoy your food!</p>
+  </div>
+
+  <div class="checkout_items">
+    <div class="requested_item" *ngFor="let product of checkout_items">
+      <div class="requested_item__image_container">
+        <img
+          class="requested_item__image_content"
+          [src]="product.image.desktop"
+          [alt]="product.name"
+        />
+      </div>
+
+      <div class="requested_item__info">
+        <p class="requested_item__name">{{ product.name }}</p>
+        <span class="requested_item__amount">{{ product.quantity }}x</span>
+        <span class="requested_item__item_price">
+          &#64;{{ product.price | number : "1.2" }}
+        </span>
+      </div>
+
+      <h3 class="requested_item__amount_price">
+        &#x24;{{ product.price * product.quantity | number : "1.2" }}
+      </h3>
+    </div>
+
+    <div class="order_total">
+      <p class="order_total__title">Order Total</p>
+      <h1 class="order_total__checkout_price">
+        &#x24;{{ checkout_price | number : "1.2" }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="new_order_btn" (click)="new_order.emit()">Start New Order</div>
+</section>

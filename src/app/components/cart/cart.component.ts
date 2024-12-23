@@ -12,6 +12,7 @@ export class CartComponent {
   selected_products: product_item[] = [];
   total_price = 0;
   @Output() remove_dessert = new EventEmitter<product_item>();
+  @Output() confirm_order = new EventEmitter<void>();
 
   constructor(private cart_client: CartService) {
     this.cart_client = cart_client;

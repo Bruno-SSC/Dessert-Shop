@@ -12,3 +12,7 @@ com4
 com5
     Working on moving all cart_service communication from children components to the product list component in order to simplify communication and avoid mess.
     the cart and card emits custom events to the list. Then, the list proceeds with the cart_service. 
+com6
+    Implemented the confirmatation modal.
+com7
+    
