@@ -26,4 +26,10 @@ export class ProductCardComponent {
   window_width = window.innerWidth;
   @Input() product: product_item = {} as product_item;
   @Output() update_product = new EventEmitter<output_event>();
+
+  choose_img(): string {
+    if (this.window_width <= 480) return this.product.image.mobile;
+    if (this.window_width <= 769) return this.product.image.tablet;
+    return this.product.image.desktop;
+  }
 }

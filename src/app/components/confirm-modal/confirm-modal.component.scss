@@ -1,3 +1,5 @@
+@import "variables";
+
 .black_layer {
   position: absolute;
   top: 0;
@@ -9,13 +11,13 @@
 
 .confirm_order {
   position: absolute;
-  top: 50%;
+  bottom: 0%;
   left: 50%;
 
-  width: 600px;
+  width: 100%;
   height: fit-content;
 
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
 
   background-color: #fff;
   padding: 20px;
@@ -24,6 +26,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+@media screen and (min-width: $mobile_bp) {
+  .confirm_order {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .modal_message {
@@ -81,8 +93,18 @@
 }
 
 .requested_item__name {
-  font-size: 0.9rem;
-  font-weight: 600;
+  width: 60px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media screen and (min-width: 320px) {
+  .requested_item__name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: fit-content;
+  }
 }
 
 .requested_item__amount,

@@ -1,3 +1,5 @@
+@import "variables";
+
 .desserts_layout {
   display: flex;
   flex-direction: column;
@@ -17,14 +19,28 @@
   gap: 20px;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $mobile_bp) {
+  .dessert_list__items {
+    flex-direction: row;
+    width: calc(380px * 2);
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: $tablet_bp) {
   .desserts_layout {
     flex-direction: row;
   }
 
   .dessert_list__items {
     flex-direction: row;
-    width: calc(400px * 2); // enough to 3 items. 400 is card size + gap.
+    width: calc(280px * 2); // 280 is card size + gap.
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: $laptop_bp) {
+  .dessert_list__items {
+    width: calc(280px * 3); 
   }
 }

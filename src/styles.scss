@@ -1,14 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
-
-/* 
-up to 375 is mobile
-up to 8 or 9 smtg is tablet
-up to 1440 is desktop
-above it, I will just rig the width and fill with black borders or something
-like mercado livre and such, no widescreen support
-*/
 
 * {
   margin: 0;
@@ -40,7 +32,13 @@ body {
   position: relative;
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $tablet_bp) {
+  body {
+    padding: 30px;
+  }
+}
+
+@media screen and (min-width: $big_monitor_bp) {
   body {
     padding: 100px;
   }

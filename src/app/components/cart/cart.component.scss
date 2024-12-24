@@ -1,3 +1,5 @@
+@import "variables";
+
 .dessert_cart {
   display: flex;
   flex-direction: column;
@@ -14,7 +16,7 @@
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: $tablet_bp) {
   .dessert_cart {
     width: 380px;
   }

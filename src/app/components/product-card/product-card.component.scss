@@ -1,3 +1,5 @@
+@import "variables";
+
 .dessert_container {
   position: relative;
   display: flex;
@@ -9,7 +11,7 @@
 .dessert_img__container {
   width: 100%;
   height: calc(70% - 5px);
-  // to align middle of the add_cart btn with the bottom border
+  // align middle of the add_cart btn with the bottom border.
   overflow: hidden;
 }
 
@@ -28,7 +30,15 @@
   }
 }
 
-@media screen and (min-width: 400px) {
+
+@media screen and (min-width: $mobile_bp) {
+  .dessert_container {
+    width: 350px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: $tablet_bp) {
   .dessert_container {
     width: 250px;
     height: 350px;

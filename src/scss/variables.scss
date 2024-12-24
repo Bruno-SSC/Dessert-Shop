@@ -1,2 +1,7 @@
-$mobile_breakpoint: "768px";
-$tablet_breakpoint: "1000px";
+$mobile_bp: "480px";
+//smaller phones
+$tablet_bp: "769px";
+// tablets and larger phones
+$laptop_bp: "1280px";
+// laptops, tablets in landscape
+$big_monitor_bp: "1440px";

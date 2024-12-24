@@ -20,3 +20,7 @@ com8
     Working on the mobile version. Implemented the product list for devices up to 390px.
 com9    
     fixed the images to be responsive for screens smaller the 390px and ajusted the cart component as well. 
+com10
+    Learned how to use scss variables with angular and finished responsiveness for mobile, tablet, laptop and bigger monitors.
+com11
+    what about checking the mixins?

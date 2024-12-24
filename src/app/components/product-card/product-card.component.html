@@ -5,7 +5,7 @@
         dessert_img__content: true,
         'dessert_img__content--selected': product.selected
       }"
-      [src]="window_width <= 390 ? product.image.mobile : product.image.desktop"
+      [src]="choose_img()"
       alt="dessert_pic"
     />
   </div>
