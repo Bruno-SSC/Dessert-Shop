@@ -23,4 +23,7 @@ com9
 com10
     Learned how to use scss variables with angular and finished responsiveness for mobile, tablet, laptop and bigger monitors.
 com11
-    what about checking the mixins?
+    implemented the mobile animation of the confirmation modal slide in from the bottom.
+com12
+    what about checking the mixins? Animations?
+    There is that bug where you decrease the quantity but it doesn't remove from cart as well.

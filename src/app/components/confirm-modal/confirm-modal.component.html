@@ -1,6 +1,6 @@
 <section class="black_layer"></section>
 
-<section class="confirm_order">
+<section class="confirm_order" [@slide_in]="handle_animation()">
   <div class="modal_message">
     <div class="modal_message__icon_container">
       <img
@@ -45,5 +45,5 @@
     </div>
   </div>
 
-  <div class="new_order_btn" (click)="new_order.emit()">Start New Order</div>
+  <div class="new_order_btn" (click)="handle_btn_click()">Start New Order</div>
 </section>

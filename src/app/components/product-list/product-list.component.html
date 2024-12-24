@@ -15,8 +15,10 @@
     (confirm_order)="confirmed_order = true"
     (remove_dessert)="remove_dessert($event)"
   ></app-cart>
+
   <app-confirm-modal
     (new_order)="this.confirmed_order = false"
     *ngIf="confirmed_order"
+    [confirmed_order]="confirmed_order" 
   ></app-confirm-modal>
 </section>

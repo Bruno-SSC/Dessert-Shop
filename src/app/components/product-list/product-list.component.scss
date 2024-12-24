@@ -1,9 +1,11 @@
 @import "variables";
 
 .desserts_layout {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  overflow: hidden;
 }
 
 .dessert_list__title {

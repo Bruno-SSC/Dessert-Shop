@@ -52,16 +52,3 @@ export class ProductListComponent {
     this.cart_client.remove_dessert(dessert.name);
   }
 }
-
-/* 
-import { EventManager } from 'src/utils/EventManager';
-
-    EventManager.on('cart_update', (data: product_item[]) => {
-      data.forEach((el: product_item) => {
-        for (let product of this.products) {
-          if (product.name == el.name) product = el;
-        }
-      });
-    });
-
-*/
