@@ -17,8 +17,8 @@
   ></app-cart>
 
   <app-confirm-modal
+    [@modal_pop]="this.modal_animation()"
     (new_order)="this.confirmed_order = false"
     *ngIf="confirmed_order"
-    [confirmed_order]="confirmed_order"
   ></app-confirm-modal>
 </section>

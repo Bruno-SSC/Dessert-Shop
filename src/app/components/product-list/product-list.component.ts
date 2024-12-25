@@ -9,7 +9,6 @@ import {
   group,
   query,
   stagger,
-  state,
   style,
   transition,
   trigger,
@@ -33,6 +32,44 @@ import {
             ]),
           ]),
           query('@slow_show', [animateChild()]),
+        ]),
+      ]),
+    ]),
+    trigger('modal_pop', [
+      transition('void => show_mob', [
+        group([
+          query('.confirm_order', [
+            style({ transform: 'translateY(100vh)' }),
+            animate('600ms ease-in'),
+            style({ transform: 'translateY(0vh)' }),
+          ]),
+          query('.black_layer', [
+            style({ opacity: 0 }),
+            animate('500ms ease'),
+            style({ opacity: 1 }),
+          ]),
+        ]),
+      ]),
+      transition('show_mob => void', [
+        group([
+          query('.confirm_order', [
+            animate('600ms ease-in'),
+            style({ transform: 'translateY(100vh)' }),
+          ]),
+          query('.black_layer', [animate('500ms ease'), style({ opacity: 0 })]),
+        ]),
+      ]),
+      transition('void => show_desk', [
+        query('.confirm_order, .black_layer', [
+          style({ opacity: 0 }),
+          animate('500ms ease'),
+          style({ opacity: 1 }),
+        ]),
+      ]),
+      transition('show_desk => void', [
+        query('.confirm_order, .black_layer', [
+          animate('500ms ease'),
+          style({ opacity: 0 }),
         ]),
       ]),
     ]),
@@ -80,5 +117,10 @@ export class ProductListComponent {
     filtered_item.selected = false;
     filtered_item.quantity = 0;
     this.cart_client.remove_dessert(dessert.name);
+  }
+
+  modal_animation(): string {
+    if (window.innerWidth <= 480) return 'show_mob';
+    return 'show_desk';
   }
 }

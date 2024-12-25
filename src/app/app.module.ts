@@ -10,7 +10,13 @@ import { CartComponent } from './components/cart/cart.component';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 @NgModule({
-  declarations: [AppComponent, ProductCardComponent, ProductListComponent, CartComponent, ConfirmModalComponent],
+  declarations: [
+    AppComponent,
+    ProductCardComponent,
+    ProductListComponent,
+    CartComponent,
+    ConfirmModalComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],

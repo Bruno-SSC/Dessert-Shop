@@ -28,5 +28,6 @@ com12
     Fixed the bug of desserts sticking in the cart after being reset to zero. 
     Added a page animation for all elements.
 com13
-   fixed the mobile animation
-
+   Fixed the mobile animation
+com14
+    Actually fixed the mobile animation, implemented a few more animations and the black curtain.
