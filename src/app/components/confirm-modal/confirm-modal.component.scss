@@ -11,7 +11,7 @@
 
 .confirm_order {
   position: absolute;
-  top: 100%;
+  bottom: 0;
   left: 0;
 
   width: 100%;
@@ -28,6 +28,7 @@
 @media screen and (min-width: $mobile_bp) {
   .confirm_order {
     position: absolute;
+    bottom: initial;
     top: 50%;
     left: 50%;
     width: 600px;

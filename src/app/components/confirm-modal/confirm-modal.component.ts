@@ -16,8 +16,23 @@ import {
   styleUrls: ['./confirm-modal.component.scss'],
   animations: [
     trigger('slide_in', [
-      state('visible', style({ transform: 'translateY(-100%)', opacity: 1 })),
-      transition('void <=> visible', animate('500ms ease-in')),
+      state('hidden', style({ opacity: 0, transform: 'translateY(100%)' })),
+      transition('void => show_mob', [
+        style({ transform: 'translateY(100%)' }),
+        animate('500ms ease-in'),
+        style({ transform: 'translateY(-100%)' }),
+      ]),
+      transition('show_mob => hidden', animate('500ms ease-in')),
+      transition('void => show_desk', [
+        style({ opacity: 0 }),
+        animate('500ms ease-in'),
+        style({ opacity: 1 }),
+      ]),
+      transition('show_desk => hidden_desk', [
+        style({ opacity: 1 }),
+        animate('500ms ease-in'),
+        style({ opacity: 0 }),
+      ]),
     ]),
   ],
 })
@@ -42,13 +57,16 @@ export class ConfirmModalComponent {
 
   handle_btn_click() {
     this.confirmed_order = false;
-    this.new_order.emit();
+
+    setTimeout(() => {
+      this.new_order.emit();
+    }, 500);
   }
 
   handle_animation(): string {
-    if (this.window_width >= 480) return 'void';
+    if (!this.confirmed_order) return 'hidden';
 
-    if (this.confirmed_order) return 'visible';
-    else return 'void';
+    if (this.window_width <= 480) return 'show_mob';
+    else return 'show_desk';
   }
 }

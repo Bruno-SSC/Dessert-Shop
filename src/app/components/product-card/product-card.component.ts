@@ -17,8 +17,8 @@ import {
     trigger('slow_show', [
       state('appear', style({ opacity: 1 })),
       state('disappear', style({ opacity: 0 })),
-      transition('void => appear', animate('500ms 500ms')),
-      transition('appear => void', animate(500)),
+      transition('void => appear', animate('200ms 200ms')),
+      transition('appear => void', animate(200)),
     ]),
   ],
 })
