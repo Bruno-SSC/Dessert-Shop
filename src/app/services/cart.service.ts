@@ -11,6 +11,11 @@ export class CartService {
   constructor() {}
 
   update_dessert(dessert: product_item): void {
+    if (dessert.quantity == 0) {
+      this.remove_dessert(dessert.name);
+      return;
+    }
+
     let filtered_item = this.selected_desserts.filter(
       (el) => el.name == dessert.name
     )[0];

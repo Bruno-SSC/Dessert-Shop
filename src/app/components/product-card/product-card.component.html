@@ -11,7 +11,7 @@
   </div>
 
   <div
-    [@slow_show]="!product.selected && 'appear'"
+    [@slow_show]="'appear'"
     (click)="
       this.update_product.emit({
         product_name: product.name,
@@ -33,7 +33,7 @@
   </div>
 
   <div
-    [@slow_show]="product.selected && 'appear'"
+    [@slow_show]="'appear'"
     class="add_btn add_btn--selected"
     *ngIf="product.selected"
   >

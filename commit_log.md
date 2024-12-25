@@ -25,5 +25,7 @@ com10
 com11
     implemented the mobile animation of the confirmation modal slide in from the bottom.
 com12
-    what about checking the mixins? Animations?
-    There is that bug where you decrease the quantity but it doesn't remove from cart as well.
+    Fixed the bug of desserts sticking in the cart after being reset to zero. 
+    Added a page animation for all elements.
+
+

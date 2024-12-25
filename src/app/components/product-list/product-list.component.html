@@ -1,4 +1,4 @@
-<section class="desserts_layout">
+<section class="desserts_layout" [@pageAnimations]>
   <div class="dessert_list">
     <h1 class="dessert_list__title">Desserts</h1>
 
@@ -19,6 +19,6 @@
   <app-confirm-modal
     (new_order)="this.confirmed_order = false"
     *ngIf="confirmed_order"
-    [confirmed_order]="confirmed_order" 
+    [confirmed_order]="confirmed_order"
   ></app-confirm-modal>
 </section>

@@ -3,10 +3,40 @@ import { product_item, output_event } from 'src/utils/interfaces';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
 
+import {
+  animate,
+  animateChild,
+  group,
+  query,
+  stagger,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
+  animations: [
+    trigger('pageAnimations', [
+      transition(':enter', [
+        group([
+          query('.dessert_container, .dessert_list__title, .dessert_cart', [
+            style({ opacity: 0, transform: 'translateY(-100px)' }),
+            stagger(30, [
+              animate(
+                '1000ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ opacity: 1, transform: 'none' })
+              ),
+            ]),
+          ]),
+          query('@slow_show', [animateChild()]),
+        ]),
+      ]),
+    ]),
+  ],
 })
 export class ProductListComponent {
   products: product_item[];
