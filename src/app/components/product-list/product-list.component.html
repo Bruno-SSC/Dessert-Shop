@@ -1,4 +1,4 @@
-<section class="desserts_layout" [@pageAnimations]>
+<section class="desserts_layout" [@page_animation]>
   <div class="dessert_list">
     <h1 class="dessert_list__title">Desserts</h1>
 
@@ -17,8 +17,8 @@
   ></app-cart>
 
   <app-confirm-modal
-    [@modal_pop]="this.modal_animation()"
-    (new_order)="this.confirmed_order = false"
+    [@modal_pop]="modal_animation()"
+    (new_order)="handle_new_order()"
     *ngIf="confirmed_order"
   ></app-confirm-modal>
 </section>

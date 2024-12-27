@@ -37,7 +37,12 @@ export class CartService {
     EventManager.emit('cart_update', this.selected_desserts);
   }
 
-  retrieve_desserts() {
+  retrieve_desserts(): product_item[] {
     return this.selected_desserts;
+  }
+
+  clear_cart(): void {
+    this.selected_desserts = [];
+    EventManager.emit('cart_update', this.selected_desserts);
   }
 }

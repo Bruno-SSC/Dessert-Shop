@@ -33,3 +33,7 @@ com14
     Actually fixed the mobile animation, implemented a few more animations and the black curtain.
 com15
     forgot to remove borders from the dessert layout component
+com16
+    Moved product_list animations to animations.ts and cleaned them a little bit. Unlinked the api service product list prop from the component product list prop.
+    Added a function to clear the cart and reset the products when the new order event is emitted. 
+    
