@@ -40,4 +40,6 @@ com17
     fixed page animation for starting new orders, improved add to cart btn animation and minor adjusts.
 com18   
     Started using a dev branch. Deploys and publish is now only on main branch. Updated readme to make the repository public. 
+com19
+    forgot to update the live link on the readme.
     

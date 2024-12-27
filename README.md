@@ -20,7 +20,7 @@ These are the requirements for this project from frontendMentor challenges:
 
 - > [FrontendMentor Challenge Page](https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d)
 
-- > [Live Project Link](https://movsort.netlify.app)
+- > [Live Project Link](https://dessertin.netlify.app/)
 
 ## Goal 📌 
 
