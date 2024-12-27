@@ -1,26 +1,12 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { product_item, output_event } from 'src/utils/interfaces';
-
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { item_fade } from 'src/utils/animations';
+import { product_item, output_event, update_types } from 'src/utils/interfaces';
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
-  animations: [
-    trigger('slow_show', [
-      state('appear', style({ opacity: 1 })),
-      state('disappear', style({ opacity: 0 })),
-      transition('void => appear', animate('200ms 200ms')),
-      transition('appear => void', animate(200)),
-    ]),
-  ],
+  animations: [item_fade],
 })
 export class ProductCardComponent {
   window_width = window.innerWidth;
@@ -31,5 +17,12 @@ export class ProductCardComponent {
     if (this.window_width <= 480) return this.product.image.mobile;
     if (this.window_width <= 769) return this.product.image.tablet;
     return this.product.image.desktop;
+  }
+
+  handle_product_update(type: update_types) {
+    this.update_product.emit({
+      product_name: this.product.name,
+      update_type: type,
+    });
   }
 }

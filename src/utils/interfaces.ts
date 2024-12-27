@@ -12,7 +12,9 @@ export interface product_item {
   selected?: boolean;
 }
 
+export type update_types = 'increase' | 'decrease' | 'add';
+
 export interface output_event {
   product_name: string;
-  update_type: string;
+  update_type: update_types;
 }

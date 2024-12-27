@@ -1,35 +1,14 @@
-import {
-  animate,
-  query,
-  stagger,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { EventManager } from 'src/utils/EventManager';
 import { product_item } from 'src/utils/interfaces';
+import { item_fade } from 'src/utils/animations';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss'],
-  animations: [
-    trigger('fade_in', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        query(':self', [
-          stagger('30ms', [animate('500ms ease', style({ opacity: 1 }))]),
-        ]),
-      ]),
-      transition(':leave', [
-        query(':self', [
-          stagger('30ms', [animate('200ms ease', style({ opacity: 0 }))]),
-        ]),
-      ]),
-    ]),
-  ],
+  animations: [item_fade],
 })
 export class CartComponent {
   selected_products: product_item[] = [];

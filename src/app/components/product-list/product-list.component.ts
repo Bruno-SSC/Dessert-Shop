@@ -27,14 +27,14 @@ export class ProductListComponent {
       (el) => el.name === data.product_name
     )[0];
 
-    if (data.update_type == 'add_dessert') {
+    if (data.update_type === 'add') {
       filtered_item.selected = true;
       filtered_item.quantity += 1;
     }
 
-    if (data.update_type == 'increase_quantity') filtered_item.quantity += 1;
+    if (data.update_type === 'increase') filtered_item.quantity += 1;
 
-    if (data.update_type == 'decrease_quantity') {
+    if (data.update_type === 'decrease') {
       filtered_item.quantity -= 1;
       if (filtered_item.quantity > 0) return;
       filtered_item.quantity = 0;

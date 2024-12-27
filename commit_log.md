@@ -36,4 +36,5 @@ com15
 com16
     Moved product_list animations to animations.ts and cleaned them a little bit. Unlinked the api service product list prop from the component product list prop.
     Added a function to clear the cart and reset the products when the new order event is emitted. 
-    
+com17
+    fixed page animation for starting new orders, improved add to cart btn animation and minor adjusts.

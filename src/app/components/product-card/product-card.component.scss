@@ -23,7 +23,7 @@
   border-radius: 15px;
   border: 2px solid transparent; // avoid image shrinking effect due to box-sizing
 
-  transition: 1s ease all;
+  transition: 200ms ease all;
 
   &--selected {
     border: 2px solid #c83b0e;
@@ -50,7 +50,7 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -70%);
-  opacity: 0;
+  opacity: 1;
   display: flex;
   justify-content: center;
   align-items: center;

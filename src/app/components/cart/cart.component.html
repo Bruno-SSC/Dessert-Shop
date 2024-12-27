@@ -20,7 +20,7 @@
     Your Cart ({{ selected_products.length }})
   </h1>
 
-  <div class="list_item" *ngFor="let product of selected_products" [@fade_in]>
+  <div class="list_item" *ngFor="let product of selected_products" [@item_fade]>
     <div class="list_item__info">
       <p class="list_item__name">{{ product.name }}</p>
       <span class="list_item__quantity"> {{ product.quantity }}x </span>
