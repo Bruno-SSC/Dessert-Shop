@@ -5,7 +5,7 @@
     <div class="dessert_list__items">
       <app-product-card
         (update_product)="update_product($event)"
-        *ngFor="let product of products"
+        *ngFor="let product of products; let i = index"
         [product]="product"
       ></app-product-card>
     </div>
