@@ -15,7 +15,6 @@ export class ProductListComponent {
   products: product_item[];
   tabindexes: number[] = [];
   confirmed_order: boolean = false;
-  counter = 0;
 
   constructor(
     private api_client: ApiService,
@@ -39,8 +38,8 @@ export class ProductListComponent {
         });
       };
 
-      KeyNavigation.add_element(confirm_cb, cancel_cb);
-      this.tabindexes.push(KeyNavigation.total_count);
+      const tabindex = KeyNavigation.add_element(confirm_cb, cancel_cb);
+      this.tabindexes.push(tabindex);
     });
   }
 
@@ -54,7 +53,10 @@ export class ProductListComponent {
       filtered_item.quantity += 1;
     }
 
-    if (data.update_type === 'increase') filtered_item.quantity += 1;
+    if (data.update_type === 'increase') {
+      filtered_item.selected = true; // in case the keyboard is used to increase withouth adding
+      filtered_item.quantity += 1;
+    }
 
     if (data.update_type === 'decrease') {
       filtered_item.quantity -= 1;

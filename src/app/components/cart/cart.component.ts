@@ -25,8 +25,8 @@ export class CartComponent {
 
     const confirm_cb = () => this.confirm_order.emit();
     const cancel_cb = () => {};
-    KeyNavigation.add_element(confirm_cb, cancel_cb);
-    this.tabindex = KeyNavigation.total_count;
+    const tabindex = KeyNavigation.add_element(confirm_cb, cancel_cb);
+    this.tabindex = tabindex;
   }
 
   update_cart(): void {
