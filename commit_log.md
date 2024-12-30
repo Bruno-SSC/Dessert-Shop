@@ -46,4 +46,7 @@ com20
     fixed the ng0100 problem by calculating the tabindexes of the product list before hand instead of during the template rendering + minor changes and progress overal on the keynavigation.
 com21
     moving between products with tab and shift, adding, increase, decrease desserts to the cart and confirm order using the keyboard is now fully possible.
+com22
+    changed the favicon and added the confirm modal to the focusable list.
+
     
