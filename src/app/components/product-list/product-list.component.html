@@ -5,8 +5,9 @@
     <div class="dessert_list__items">
       <app-product-card
         (update_product)="update_product($event)"
-        *ngFor="let product of products"
+        *ngFor="let product of products; let i = index"
         [product]="product"
+        [tabindex]="tabindexes[i]"
       ></app-product-card>
     </div>
   </div>
@@ -14,6 +15,7 @@
   <app-cart
     (confirm_order)="confirmed_order = true"
     (remove_dessert)="remove_dessert($event)"
+    [tabIndex]=""
   ></app-cart>
 
   <app-confirm-modal

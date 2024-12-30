@@ -12,6 +12,12 @@ export interface product_item {
   selected?: boolean;
 }
 
+export interface focusable_object {
+  tabindex: number;
+  confirm: () => void;
+  cancel: () => void;
+}
+
 export type update_types = 'increase' | 'decrease' | 'add';
 
 export interface output_event {

@@ -41,5 +41,12 @@ com17
 com18   
     Started using a dev branch. Deploys and publish is now only on main branch. Updated readme to make the repository public. 
 com19
-    forgot to update the live link on the readme.
+    working on the key_navigation service to make all the app usable only with keyboard.
+com20
+    fixed the ng0100 problem by calculating the tabindexes of the product list before hand instead of during the template rendering + minor changes and progress overal on the keynavigation.
+com21
+    moving between products with tab and shift, adding, increase, decrease desserts to the cart and confirm order using the keyboard is now fully possible.
+com22
+    changed the favicon and added the confirm modal to the focusable list.
+
     
