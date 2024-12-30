@@ -3,6 +3,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { EventManager } from 'src/utils/EventManager';
 import { product_item } from 'src/utils/interfaces';
 import { item_fade } from 'src/utils/animations';
+import KeyNavigation from 'src/utils/KeyNavigation';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,7 @@ import { item_fade } from 'src/utils/animations';
   animations: [item_fade],
 })
 export class CartComponent {
+  tabindex: number;
   selected_products: product_item[] = [];
   total_price = 0;
   @Output() remove_dessert = new EventEmitter<product_item>();
@@ -20,6 +22,11 @@ export class CartComponent {
     this.cart_client = cart_client;
     this.selected_products = [...this.cart_client.retrieve_desserts()];
     EventManager.on('cart_update', () => this.update_cart());
+
+    const confirm_cb = () => this.confirm_order.emit();
+    const cancel_cb = () => {};
+    KeyNavigation.add_element(confirm_cb, cancel_cb);
+    this.tabindex = KeyNavigation.total_count;
   }
 
   update_cart(): void {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { product_item, output_event } from 'src/utils/interfaces';
 import { ApiService } from 'src/app/services/api.service';
 import { CartService } from 'src/app/services/cart.service';
-
+import KeyNavigation from 'src/utils/KeyNavigation';
 import { modal_pop, page_animation } from 'src/utils/animations';
 
 @Component({
@@ -13,13 +13,35 @@ import { modal_pop, page_animation } from 'src/utils/animations';
 })
 export class ProductListComponent {
   products: product_item[];
+  tabindexes: number[] = [];
   confirmed_order: boolean = false;
+  counter = 0;
 
   constructor(
     private api_client: ApiService,
     private cart_client: CartService
   ) {
     this.products = this.api_client.retrive_products();
+
+    // avoids ng0100 error of using dynamic values in bindings during template rendering.
+    this.products.forEach((product) => {
+      const confirm_cb = () => {
+        this.update_product({
+          product_name: product.name,
+          update_type: 'increase',
+        });
+      };
+
+      const cancel_cb = () => {
+        this.update_product({
+          product_name: product.name,
+          update_type: 'decrease',
+        });
+      };
+
+      KeyNavigation.add_element(confirm_cb, cancel_cb);
+      this.tabindexes.push(KeyNavigation.total_count);
+    });
   }
 
   update_product(data: output_event): void {

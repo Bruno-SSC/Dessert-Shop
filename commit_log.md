@@ -40,4 +40,8 @@ com17
     fixed page animation for starting new orders, improved add to cart btn animation and minor adjusts.
 com18   
     Started using a dev branch. Deploys and publish is now only on main branch. Updated readme to make the repository public. 
+com19
+    working on the key_navigation service to make all the app usable only with keyboard.
+com20
+    fixed the ng0100 problem by calculating the tabindexes of the product list before hand instead of during the template rendering + minor changes and progress overal on the keynavigation.
     
